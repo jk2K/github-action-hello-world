@@ -1,0 +1,23 @@
+name: Demo33
+on:
+  workflow_dispatch:
+    inputs:
+      # 公共参数
+      start:
+        description: 手动开始
+        default: '0'
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    environment: dev
+    name: ssss
+    steps:
+      - name: Display the environment variables and their values
+        run: |
+          console.log('hello world')
+        shell: node {0}
+      - name: Display the path
+        run: |
+          import os
+          print(os.environ['PATH'])
+        shell: python
